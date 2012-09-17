@@ -12,15 +12,16 @@
 
     <http auto-config='true'>
     	<!-- daftar url yang diproteksi -->
-        <intercept-url pattern="/protected/**" access="role-biasa"/>
-        <intercept-url pattern="/protected/admin/**" access="role-admin"/>
+         <intercept-url pattern="/protected/admin/**" access="ROLE_ADMIN"/>
+         <intercept-url pattern="/protected/**" access="ROLE_BIASA"/>
+       
     </http> 
     
     <authentication-manager>
         <authentication-provider>
              <user-service>
-                 <user name="anggi" password="123" authorities="role-biasa,role-admin" />
-                 <user name="riyandi" password="123" authorities="role-biasa" />
+                 <user name="anggi" password="123" authorities="ROLE_BIASA,ROLE_ADMIN"/>
+                 <user name="riyandi" password="123" authorities="ROLE_BIASA" />
              </user-service>
         </authentication-provider>
     </authentication-manager>
